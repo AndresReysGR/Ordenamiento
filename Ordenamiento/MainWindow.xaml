@@ -7,9 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lstNumeros" HorizontalAlignment="Left" Height="335" Margin="10,37,0,0" VerticalAlignment="Top" Width="173"/>
-        <Button x:Name="btnOrdenar" Content="Ordenar Shell" HorizontalAlignment="Left" Margin="220,37,0,0" VerticalAlignment="Top" Width="141" Click="BtnOrdenar_Click"/>
-        <Button x:Name="btnOrdenarbbl" Content="Ordenar Bubble" HorizontalAlignment="Left" Margin="220,73,0,0" VerticalAlignment="Top" Width="141" Click="BtnOrdenarbbl_Click"/>
+        <ListView x:Name="lstNumeros" HorizontalAlignment="Left" Height="335" Margin="10,37,0,0" VerticalAlignment="Top" Width="393">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nombre}" Header="Nombre" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Promedio}" Header="Promedio" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Faltas}" Header="Faltas" Width="120"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnOrdenar" Content="Ordenar Shell por Promedio" HorizontalAlignment="Left" Margin="427,38,0,0" VerticalAlignment="Top" Width="184" Click="BtnOrdenar_Click"/>
+        <Button x:Name="btnOrdenarbbl" Content="Ordenar Bubble por Promedio" HorizontalAlignment="Left" Margin="427,74,0,0" VerticalAlignment="Top" Width="184" Click="BtnOrdenarbbl_Click"/>
+        <Button x:Name="btnOrdenar_Copy" Content="Ordenar Shell por Faltas" HorizontalAlignment="Left" Margin="427,129,0,0" VerticalAlignment="Top" Width="184" Click="BtnOrdenar1"/>
+        <Button x:Name="btnOrdenarbbl_Copy" Content="Ordenar Bubble por Faltas" HorizontalAlignment="Left" Margin="427,165,0,0" VerticalAlignment="Top" Width="184" Click="BtnOrdenarbbl2"/>
 
     </Grid>
 </Window>
